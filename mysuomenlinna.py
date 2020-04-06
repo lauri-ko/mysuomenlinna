@@ -7,7 +7,9 @@ import codecs
 
 # convert timestamp to hh:mm format
 def convertTime(timestamp):
+    tz = pytz.timezone('Europe/Helsinki')
     date = datetime.datetime.fromtimestamp(timestamp)
+    date = date.astimezone(tz)
     return date.strftime('%H:%M')
 
 def getTimetableForEachDay(stop):
