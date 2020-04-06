@@ -1,0 +1,358 @@
+
+@charset "UTF-8";
+
+/*!
+ * MySuomenlinna -http://mysuomenlinna.fi
+ *
+ */
+
+html, body {
+    margin: 0;
+    padding: 0;}
+body {
+    font-family: "din-condensed";
+    font-style: normal;
+    font-weight: 300;
+    text-align:center;}
+
+#vesibussi {
+    display:none;}
+
+.container-fluid {
+    text-align:left;}
+
+.onprint {
+    display:none;}
+
+.viikkis {
+    padding-top:2em;}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-style: normal;
+    line-height: 1.1em;
+    font-weight: 400!important;}
+
+h3 {
+    font-style: normal;
+    line-height: 1.1em;
+    font-weight: 300!important;}
+
+h2 em, h4 em, p em, caption em, th em, .cap em {
+    font-style: normal;
+    font-weight: 300;}
+
+.cap em {
+    display: block;}
+.cap span em {
+    display: inline-block;}
+
+@media (min-width: 768px) {
+    .cap em {
+    display: inline-block;}
+}
+h3 em {
+    font-style: normal;
+    font-weight: 400;}
+
+.reitti h2 { 
+    font-size:1.7em;
+    text-align:left;}
+
+.hsl h3 { 
+    font-size: 14px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0}
+
+@media (min-width: 360px) {
+
+    .hsl h3 { 
+    font-size:1.2em;}
+}
+
+@media (min-width: 768px) {
+    .reitti h2 { 
+    font-size:2.5em;}
+    .hsl h3 { 
+    font-size:1.5em;}
+}
+@media (min-width: 1024px) {
+    .hsl h3 { 
+    width: 100%;}
+}
+
+h2 em, h3 em {
+    display:block;}
+
+caption {
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: left!important;
+    color:#000!important;
+    border-bottom: 1px solid #000;
+    padding-bottom:4px!important;
+    margin-bottom:4px;}
+.cap span {
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: left!important;
+    color:#000!important;
+    font-size:1.2em;}
+
+th {
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: left!important;
+    color:#000!important;
+    line-height: 1em;
+    font-size: 11px;}
+
+th em {
+    display:block; 
+    font-size: 0.8em}
+
+caption em:before, p em:before {
+    content:" | "}
+
+p, p a {
+    margin-top:2em!important;
+    text-align:center;}
+
+footer p {
+    margin-top:1em!important;
+    text-align:center;}
+footer p.matka-aika em {
+    display: block;}
+footer p.matka-aika em:before {
+    content:""}
+footer a {
+    text-transform: uppercase;
+    font-size: 1.2em;}
+section {
+    text-align: left;}
+footer {
+    text-align: center;}
+.aikataulu {
+    width:100%;
+    margin:auto;}
+
+.aikataulu td:first-child, .jtline .aikataulu td:nth-child(4), .jtline.hakaniemi .aikataulu td:nth-child(3) {
+    font-weight: 400;   }
+.jtline.hakaniemi .aikataulu td:nth-child(4) {
+    font-weight: 300;   }
+
+.jtline tr:nth-child(even) {background: #F4F4F4}
+.jtline tr:nth-child(odd) {background: #FFF}
+
+.jtline tr.to-la:nth-child(even), .jtline tr.ei-su:nth-child(even) {background: #FFAe66}
+.jtline tr.to-la:nth-child(odd), .jtline tr.ei-su:nth-child(odd) {background: #FFBB7F}
+
+.aikataulu td:nth-child(3) {  }
+
+.cap {
+    display:inline-block;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: left!important;
+    color:#000!important;
+    font-size:1.2em;
+    line-height: 1em;
+    border-bottom: 1px solid #000;
+    padding-bottom:4px!important;
+    margin-bottom:4px;
+    width:50%;}
+
+
+col.lahto {}
+.col1 {
+  width: 15%;}
+.col2 {
+  width: 15%;}
+.col3 {
+  width: 15%;}
+.col4 {
+  width: 15%;}  
+.col5 {
+  width: 40%;}   
+.col7 {
+  width: 14%;}  
+
+p.legend span {
+    width:1em;
+    height:1em;
+    background-color: #FFBB7F;
+    padding-right:1em;}
+
+div.linja {
+    display: inline;
+    width: 54px;
+    height: 54px;
+    float: left;
+    margin: 20px 1em 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;}
+
+.linja img {
+    position:relative;
+    width:100%;
+    height:100%;}
+
+/*.linja19E div.linja {
+    background-image: url(pix/ferry-19e.png);} */
+
+@media (min-width: 768px) {
+    div.linja {
+    width: 70px;
+    height: 70px;
+    margin: 22px 1.5em 0 0;}
+}
+
+.linja span {
+    color: #fff;
+    padding-left:3px;
+    font-size:0.8em;
+    display: inline-block;
+    vertical-align: top;}
+
+@media (min-width: 768px) {
+    .linja span {
+    color: #fff;
+    padding-left:4px;
+    font-size:1em;}
+}
+div.pvm {
+    position: absolute;
+    right: 4px;
+    font-size:0.8em;}
+
+.linja19 .suokki h3 em:after {
+    content:", päälait. "}
+.linja19 .suokki h3:after {
+    content:", huvudbr. "}
+.linja19E .suokki h3 em:after {
+    content:", huoltol. "}
+.linja19E .suokki h3:after {
+    content:", servicebr. "}
+
+@media (min-width: 768px) {
+    .linja19 .suokki h3 em:after {
+    content:", päälaituri "}
+    .linja19 .suokki h3:after {
+        content:", huvudbryggan "}
+    .linja19E .suokki h3 em:after {
+        content:", huoltolaituri "}
+    .linja19E .suokki h3:after {
+    content:", servicebryggan "}
+}
+footer span {
+    text-transform: uppercase;}
+.matka-aika a {
+    display: block;}
+
+/* --------- nav --------- */
+
+.navi-tabs {
+    display:table;
+    width:100%;
+    padding: 0;}
+
+.navi-tabs li {
+    display:table-cell;
+    width: 50%;
+    padding: 0;  
+    background-color: #dddddd;
+    text-align:left;
+    padding-left:1em;
+    background-repeat: no-repeat;
+    background-size: contain;}
+
+.navi-tabs li.active { 
+    background-color: #fff;
+    }
+
+.navi-tabs li:first-child { 
+    background-image: url(pix/nonactivel.png);
+    background-position: top right;}
+.navi-tabs li:nth-child(2) { 
+    background-image: url(pix/nonactiver.png);
+    background-position: top left;}
+.navi-tabs li.active:first-child { 
+    background-image: url(pix/activel.png);
+    background-position: top right;}
+.navi-tabs li.active:nth-child(2) { 
+    background-image: url(pix/activer.png);
+    background-position: top left;}
+
+.navi-tabs li a {
+    font-size:2.0em;
+    text-align:left;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;}
+li#hsl a {
+    color:#3eb3c5;}
+li#jtline a {
+    color:#ff9c00;}
+
+
+/* --------- a2a --------- */
+.a2a_kit {  
+    display: inline-block;
+    vertical-align: middle;
+    color:#3eb3c5!important;
+    font-size:18px;}
+
+.fab {
+    padding:0 4px;}
+
+
+#poikkeus_lautta h1, #poikkeus_veskari h1,#poikkeus_lautta h4, #poikkeus_veskari h4 {
+    text-align:center;
+}
+
+/* Print Style Sheet */
+@media print {
+    .onprint {
+        display:block;}
+    .onscreen {
+        display:none;}
+    .col-xs-6 {
+        width:30%!important;
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;}
+    
+    .col-xs-12 {
+        width:100%!important;}
+    .col-md-offset-3 {
+        margin-left:5%!important;}
+    div.linja {
+        display: inline;
+        width: 51px;
+        height: 51px;
+        float: left;
+        margin: 0 1em 0 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;} 
+    
+    .jtline h2 { 
+        font-size:1.7em;
+        text-align:left;
+        margin-top:0!important;
+        margin-bottom:0!important;}
+
+    .jtline h3 { 
+        font-size: 14px;
+        padding-bottom: 2px;}
+    .aikataulu {
+        margin-bottom: 2em;  }
+    p, .linja span, .a2a_kit {
+        display:none;}
+    footer {
+        margin-top:2em;
+        text-align:left;}
+}

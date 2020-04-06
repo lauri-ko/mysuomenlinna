@@ -1,0 +1,83 @@
+
+
+<header>
+	{% include "header_content.html" %}
+</header>
+<section id="lautta">
+{% if kauppatorisuomenlinna.Kauppatori.timetables.weekends %}
+<div class="container-fluid hsl linja{{kauppatorisuomenlinna.linja}}">
+{% else %}
+<div class="container-fluid hsl linja{{kauppatorisuomenlinna.linja}} talvi">
+{% endif %}
+  <div class="row">
+    <div class="col-md-6 col-xs-12 col-md-offset-3 reitti">
+      <div class="linja">
+        <img src="pix/ferry-black.png" class="onprint">
+        <img src="pix/ferry.png" class="onscreen">
+        <span>{{ kauppatorisuomenlinna.linja }}</span>
+      </div>
+      <h2>{{ kauppatorisuomenlinna.h2.fi }}<em>{{ kauppatorisuomenlinna.h2.se }}</em></h2>
+    </div>
+    <div class="col-md-3 col-md-offset-3 col-xs-6">
+    {% include "aikataulu_template.html" with timetables=kauppatorisuomenlinna.Kauppatori only%}
+    </div>
+    <div class="col-md-3 col-xs-6 suokki">
+    {% include "aikataulu_template.html" with timetables=kauppatorisuomenlinna.Suomenlinna only%}
+    </div>
+    <div class="col-md-6 col-xs-12 col-md-offset-3">
+      <p class="matka-aika">{{ kauppatorisuomenlinna.matkaaika.fi }}<em>{{ kauppatorisuomenlinna.matkaaika.se }}</em></p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid hsl linja{{katajanokkasuomenlinna.linja}}">
+  <div class="row">
+    <div class="col-md-6 col-xs-12 col-md-offset-3 reitti">
+      <div class="linja">
+        <img src="pix/ferry-black-19e.png" class="onprint">
+        <img src="pix/ferry-19e.png" class="onscreen">
+        <span>{{ katajanokkasuomenlinna.linja }}</span>
+      </div>
+      <h2>{{ katajanokkasuomenlinna.h2.fi }}<em>{{ katajanokkasuomenlinna.h2.se }}</em></h2>
+      </div>
+      <div class="col-md-3 col-md-offset-3 col-xs-6">
+        {% include "aikataulu_template.html" with timetables=katajanokkasuomenlinna.Katajanokka only%}
+      </div>
+      <div class="col-md-3 col-xs-6 suokki">
+        {% include "aikataulu_template.html" with timetables=katajanokkasuomenlinna.Suomenlinna only%}
+      </div>
+      <div class="col-md-6 col-xs-12 col-md-offset-3">
+        <p class="matka-aika">{{ katajanokkasuomenlinna.matkaaika.fi }}<em>{{ katajanokkasuomenlinna.matkaaika.se }}</em></p>
+      </div>
+  </div>
+</div>
+<footer>
+    <div class="col-md-6 col-xs-12 col-md-offset-3">
+        <span>Â© {% now "Y" %} mysuomenlinna.fi & HSL (data)</span>
+    </div>
+</footer>
+</section>
+{% comment "veskari ei kule" %}
+<section id="vesibussi">
+		{% include "vesibussi.html" %}
+</section>
+<script>
+    $("#hsl").on('click', function () {
+                    $("#vesibussi").hide();
+                    $("#lautta").show();
+                    $("#hsl").removeClass('nonactive');
+                    $("#jtline").addClass('nonactive');
+                    $("#jtline").removeClass('active');
+                    $("#hsl").addClass('active');
+                });
+    $("#jtline").on('click', function () {
+                    $("#lautta").hide();
+                    $("#vesibussi").show();
+                    $("#jtline").removeClass('nonactive');
+                    $("#hsl").addClass('nonactive');
+                    $("#hsl").removeClass('active');
+                    $("#jtline").addClass('active');
+                });
+</script>
+{% endcomment %}
+{% comment "veskari kulkee nyt" %}
+{% endcomment %}

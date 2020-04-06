@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include "head_content.html" %}
+	</head>
+	<body>
+		<header>
+			{% include "header_content.html" %}
+		</header>
+		<section id="lautta">
+			<div class="container-fluid hsl linja19">
+				{% include "linja_template.html" with linja="19" h2_fi="Kauppatori—Suomenlinna" h2_se="Salutorget—Sveaborg" left_h3_fi="Kauppatorilta" left_h3_se="Från Salutorget" right_h3_fi="Suomenlinnasta" right_h3_se="Från Sveaborg" left_tables=Kauppatori right_tables=Suomenlinna %}
+			</div>
+			
+			<div class="container-fluid hsl linja19E">
+				{% include "linja_template.html" with linja="19e" h2_fi="Katajanokka—Suomenlinna" h2_se="Skatudden—Sveaborg" left_h3_fi="Katajanokalta" left_h3_se="Från Skatudden" right_h3_fi="Suomenlinnasta" right_h3_se="Från Sveaborg" left_tables=Katajanokka right_tables=Huoltolaituri %}
+			</div>
+		</section>
+		{% comment "veskari ei kule" %}
+		<section id="vesibussi">
+			{% include "vesibussi.html" %}
+		</section>
+		<script>
+			$("#hsl").on('click', function () {
+							$("#vesibussi").hide();
+							$("#lautta").show();
+							$("#hsl").removeClass('nonactive');
+							$("#jtline").addClass('nonactive');
+							$("#jtline").removeClass('active');
+							$("#hsl").addClass('active');
+						});
+			$("#jtline").on('click', function () {
+							$("#lautta").hide();
+							$("#vesibussi").show();
+							$("#jtline").removeClass('nonactive');
+							$("#hsl").addClass('nonactive');
+							$("#hsl").removeClass('active');
+							$("#jtline").addClass('active');
+						});
+		</script>
+		{% endcomment %}
+	
+	</body>
+</html>

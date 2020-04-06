@@ -1,0 +1,43 @@
+
+
+<h3><em>{{ timetables.h3.fi }}</em>{{ timetables.h3.se }}</h3>
+<table class="aikataulu">
+		<caption>{{ timetables.timetables.weekdays.h4.fi }} <em>{{ timetables.timetables.weekdays.h4.se }}</em></caption>
+		<tbody>
+				<tr>
+					<th class="col1 tunti" /th>
+					<th class="col2 min" /th>
+					<th class="col3 min" /th>
+					<th class="col4 min" /th>
+					<th class="col5 min" /th>
+				</tr>
+				{% for times in timetables.timetables.weekdays.aikataulu%}
+				<tr>
+						{% for time in times %}
+					<td>{{ time }}</td>
+						{% endfor %}
+				</tr>
+				{% endfor %}
+		</tbody>
+</table>
+{% if timetables.timetables.weekends is not None %}
+<table class="aikataulu">
+<caption>{{ timetables.timetables.weekends.h4.fi }} <em>{{ timetables.timetables.weekends.h4.se }}</em></caption>
+	<tbody>
+		<tr>
+			<th class="col1 tunti" /th>
+			<th class="col2 min" /th>
+			<th class="col3 min" /th>
+			<th class="col4 min" /th>
+			<th class="col5 min" /th>
+		</tr>
+		{% for times in timetables.timetables.weekends.aikataulu%}
+		<tr>
+				{% for time in times %}
+			<td>{{ time }}</td>
+				{% endfor %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}

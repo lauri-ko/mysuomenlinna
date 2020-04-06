@@ -1,0 +1,22 @@
+<table class="aikataulu">
+	<caption>
+		{{ timetable.dates.fi }} <em>{{ timetable.dates.se }}</em>
+	</caption>
+	<tbody>
+		<tr>
+			<th class="col1 tunti" /th>
+			<th class="col2 min" /th>
+			<th class="col3 min" /th>
+			<th class="col4 min" /th>
+			<th class="col5 min" /th>
+		</tr>
+		{% for row in timetable.departureTimes %}
+		<tr>
+			{% for item in row %}
+			<td>{{ item }}</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+		
+	</tbody>
+</table>

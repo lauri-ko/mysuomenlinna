@@ -1,0 +1,27 @@
+<div class="container-fluid hsl linja{{linja}}">
+	<div class="row">
+		<div class="col-md-6 col-xs-12 col-md-offset-3 reitti">
+			<div class="linja">
+				<img src="pix/ferry-black-{{linja}}.png" class="onprint">
+				<img src="pix/ferry-{{linja}}.png" class="onscreen">
+				<span>{{ linja }}</span>
+			</div>
+			<h2>{{ h2_fi }}<em>{{ h2_se }}</em></h2>
+		</div>
+		<div class="col-md-3 col-md-offset-3 col-xs-6">
+			<h3><em>{{ left_h3_fi }}</em>{{ left_h3_se }}</h3>
+			{% for table in left_tables %}
+			{% include "timetable.html" with timetable=table %}
+			{% endfor %}
+		</div>
+		<div class="col-md-3 col-xs-6 suokki">
+			<h3><em>{{ right_h3_fi }}</em>{{ right_h3_se }}</h3>
+			{% for table in right_tables %}
+			{% include "timetable.html" with timetable=table %}
+			{% endfor %}
+		</div>
+		<div class="col-md-6 col-xs-12 col-md-offset-3">
+			<p class="matka-aika">Matka-aika noin 15 min<em>restid cirka 15 min</em></p>
+		</div>
+	</div>
+</div>
