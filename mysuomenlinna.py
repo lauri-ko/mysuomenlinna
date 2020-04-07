@@ -51,6 +51,8 @@ def generateRows(timetable):
         rows.append(row)
     return rows
 
+weekday = datetime.datetime.now(pytz.timezone('Europe/Helsinki')).weekday()
+
 def getTimetablesForStop(stop):
     timetables = []
     stopTimetables = timetableToDays(getTimetableForEachDay(stop))
@@ -60,8 +62,12 @@ def getTimetablesForStop(stop):
         aikataulu = generateRows(timetable)
         days = stopTimetables[timetable]
         if(aikataulu):
-            timetables.append({"departureTimes": aikataulu, "dates": { "fi": "".join(map(lambda i: weekdays_fi[i] + " ", days)),
-                                                                       "se": "".join(map(lambda i: weekdays_se[i] + " ", days))}})
+            if(weekday in days):
+                timetables.insert(0, {"departureTimes": aikataulu, "dates": { "fi": "".join(map(lambda i: weekdays_fi[i] + " ", days)),
+                                                                              "se": "".join(map(lambda i: weekdays_se[i] + " ", days))}})
+            else:
+                timetables.append({"departureTimes": aikataulu, "dates": { "fi": "".join(map(lambda i: weekdays_fi[i] + " ", days)),
+                                                                           "se": "".join(map(lambda i: weekdays_se[i] + " ", days))}})
     return timetables
 
 context = {
